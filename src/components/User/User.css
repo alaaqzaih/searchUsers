@@ -1,0 +1,55 @@
+.container{
+  width: 800px;
+  height: 300;
+}
+.user-information {
+  background: rgb(243, 204, 204);
+  padding: 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: row;
+  color: rgb(0, 0, 0);
+}
+
+.user-information .image img {
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.user-content {
+  padding-left: 60px;
+}
+
+.more-data {
+  font-size: 20px;
+  font-weight: 100;
+}
+.more-data p {
+  display: center;
+  flex-direction: row;
+  align-items: center;
+}
+.more-data img {
+  width: 20px;
+}
+
+.back {
+  background: #6cc644;
+  color: #f5f5f5;
+  border-radius: 7px;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px 0;
+}
+.user-repos {
+  background-color: #f5f5f5;
+  padding: 10px 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+.repo {
+  padding: 20px;
+  border-bottom: 1px solid #444;
+}
+
