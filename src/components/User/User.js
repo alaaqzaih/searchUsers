@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./User.css";
+import user from "../../assets/unknown.jpg";
 
 
 const User = (props) => {
+
+  const imageUrl = props.currentUser.avatar_url? props.currentUser.avatar_url : user;
+
+  const [image, setImage] = useState("")
+  useEffect(() => {
+    setImage(user);
+    
+  }, []);
 
   return (
     <div className="container">
     
       <div className="user-information">
         <div className="image">
-          <img src={props.currentUser.avatar_url} />
+          
+
+          <img src = {imageUrl}/>
         </div>
         <div className="user-content">
           <h3> Name :{props.currentUser.name} </h3>
