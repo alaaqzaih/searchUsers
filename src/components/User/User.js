@@ -5,47 +5,62 @@ import user from "../../assets/unknown.jpg";
 
 const User = (props) => {
 
-  const imageUrl = props.currentUser.avatar_url? props.currentUser.avatar_url : user;
 
-  const [image, setImage] = useState("")
-  useEffect(() => {
-    setImage(user);
-    
-  }, []);
+
+  // const imageUrl = props.currentUser.avatar_url? props.currentUser.avatar_url : user;
+
+
+  // const [image, setImage] = useState("")
+  // useEffect(() => {
+  //   setImage(user);
+
+  // }, []);
+  console.log(props);
+
 
   return (
-    <div className="container">
-    
-      <div className="user-information">
-        <div className="image">
-          
+    <div>
 
-          <img src = {imageUrl}/>
-        </div>
-        <div className="user-content">
-          <h3> Name :{props.currentUser.name} </h3>
+      {props.currentUser.map(user => {
+        return (
 
-          <p>Company : {props.currentUser.company}</p>
-          <p>Location :{props.currentUser.location} </p>
+          //       <div className="image">
+          //         <img src = {item.currentUser.avatar_url}/>
+          // //           </div>
+          <div className="container">
+            <div className="user-information">
+              <div className="image">
+                <img src={user.avatar_url} />
+              </div>
+              <div className="user-content">
 
-          <div className="more-data">
-            <p>
-              
-          Followers : {props.currentUser.followers} . Following : {props.currentUser.following} 
-            </p>
+                <h3> Name :{user.name} </h3>
 
-           
-       
-            <p>
-            </p>
+                <p>Company : {user.company}</p>
+                <p>Location :{user.location} </p>
+
+                <div className="more-data">
+                  <p>
+
+                    Followers : {user.followers} . Following : {user.following}
+                  </p>
+
+
+                </div>
+
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="user-repos">
-       
-      </div>
+
+
+        );
+      })}
     </div>
+
+
   );
 };
+
+
 
 export default User;
