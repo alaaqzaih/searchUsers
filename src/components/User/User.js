@@ -1,33 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./User.css";
-import user from "../../assets/unknown.jpg";
 
 
 const User = (props) => {
 
-
-
-  // const imageUrl = props.currentUser.avatar_url? props.currentUser.avatar_url : user;
-
-
-  // const [image, setImage] = useState("")
-  // useEffect(() => {
-  //   setImage(user);
-
-  // }, []);
   console.log(props);
+  // console.log(props.currentUser[1]);
+  const useridd = props.userId;
+  
+  // console.log(useridd);
+  
+  // if (props.userId != undefined){
+  //   con
+
+  // }
+  
 
 
   return (
     <div>
-
-      {props.currentUser.map(user => {
+      { props.currentUser.map(user =>  {  
+       
+      // const element = document.getElementById(useridd);
+      //  console.log(useridd);
         return (
-
-          //       <div className="image">
-          //         <img src = {item.currentUser.avatar_url}/>
-          // //           </div>
-          <div className="container">
+         
+          <div className="container" key={user.id}  id={user.id} >
             <div className="user-information">
               <div className="image">
                 <img src={user.avatar_url} />
@@ -35,7 +33,7 @@ const User = (props) => {
               <div className="user-content">
 
                 <h3> Name :{user.name} </h3>
-
+                {/* <h2> {user.id} </h2> */}
                 <p>Company : {user.company}</p>
                 <p>Location :{user.location} </p>
 
@@ -50,11 +48,19 @@ const User = (props) => {
 
               </div>
             </div>
+             
           </div>
 
 
         );
-      })}
+        
+
+      }
+     
+       
+      )}
+
+      
     </div>
 
 
